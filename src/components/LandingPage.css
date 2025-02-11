@@ -1,0 +1,91 @@
+
+.landing-page {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+}
+.header {
+    background-color: #87CEEB; /* Light blue color */
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.header nav {
+    margin-right: 20px;
+}
+
+.signin-button {
+    background-color: white;
+    color: #87CEEB;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 2px solid #87CEEB;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.signin-button:hover {
+    background-color: #87CEEB;
+    color: white;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.carousel-container {
+    flex: 1;
+    max-width: 50%;
+    margin-right: 20px;
+}
+
+.carousel .legend {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+.info-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-section {
+    margin: 20px 0;
+}
+
+.card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px 0;
+    text-align: left;
+}
+
+.footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+body {
+    overflow: hidden;
+}
