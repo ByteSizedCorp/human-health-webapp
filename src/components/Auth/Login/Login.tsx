@@ -1,9 +1,32 @@
-import React from 'react';
-import { Container, Card, CardContent, Typography, TextField, Button, Box, Link } from '@mui/material';
+import React, { useState } from 'react';
+import { Container, Card, CardContent, Typography, TextField, Button, Box, Link, MenuItem, Select, InputLabel, FormControl, SelectChangeEvent } from '@mui/material';
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
+import { AuthService } from '../../../services/AuthService';
+import { useNavigate } from 'react-router-dom';
 import './Login.css'; // Create this CSS file for custom styles
 
 const Login: React.FC = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [userType, setUserType] = useState('');
+    const navigate = useNavigate();
+
+    const handleUserTypeChange = (event: SelectChangeEvent<string>) => {
+        setUserType(event.target.value as string);
+    };
+
+    const handleLogin = async (event: React.FormEvent) => {
+        event.preventDefault();
+        const response = await AuthService.login(email, password, userType) as { success: boolean };
+        if (response.success) {
+            console.log('Login successful');
+            if(userType === 'doctor') {
+                navigate('/doctor/home');
+            }
+            // Handle successful login
+        }
+    };
+
     const handleGoogleSuccess = (response: any) => {
         console.log('Google login success:', response);
         // Handle Google login success
@@ -23,7 +46,19 @@ const Login: React.FC = () => {
                             <Typography variant="h4" component="h2" gutterBottom align="center">
                                 Login
                             </Typography>
-                            <form className="login-form">
+                            <form className="login-form" onSubmit={handleLogin}>
+                                <FormControl fullWidth margin="normal">
+                                    <InputLabel>User Type</InputLabel>
+                                    <Select
+                                        value={userType}
+                                        onChange={handleUserTypeChange}
+                                        label="User Type"
+                                        required
+                                    >
+                                        <MenuItem value="doctor">Doctor</MenuItem>
+                                        <MenuItem value="patient">Patient</MenuItem>
+                                    </Select>
+                                </FormControl>
                                 <TextField
                                     label="Email"
                                     name="email"
@@ -32,6 +67,8 @@ const Login: React.FC = () => {
                                     margin="normal"
                                     fullWidth
                                     required
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
                                 />
                                 <TextField
                                     label="Password"
@@ -41,6 +78,8 @@ const Login: React.FC = () => {
                                     margin="normal"
                                     fullWidth
                                     required
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
                                 />
                                 <Button
                                     type="submit"

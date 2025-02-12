@@ -9,7 +9,7 @@ const LandingPage: React.FC = () => {
         
             <main className="main-content">
                 <div className="carousel-container">
-                    <Carousel showThumbs={false} autoPlay infiniteLoop showIndicators={false}>
+                    <Carousel showThumbs={false} autoPlay infiniteLoop showIndicators={false} transitionTime={2000}>
                         <div>
                             <img src="https://images.unsplash.com/photo-1477332552946-cfb384aeaf1c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bWVudGFsJTIwaGVhbHRofGVufDB8fDB8fHww" alt="Mental Health Support" />
                             <p className="legend">Mental Health Support</p>
