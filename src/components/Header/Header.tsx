@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
     return (
-        <AppBar position="fixed">
+        <AppBar position="relative">
             <Toolbar>
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                     Human Health
