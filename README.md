@@ -1,50 +1,36 @@
-# React + TypeScript + Vite
+# Human Health Telemedicine SaaS App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+Human Health is a telemedicine SaaS (Software as a Service) app focused on providing mental health support. The app offers services such as online consultation, video consultation, and chat options. Users can sign up, log in, and access various mental health services from the comfort of their homes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Online Consultation**: Schedule and conduct online consultations with mental health professionals.
+- **Video Consultation**: High-quality video consultations for face-to-face interaction with therapists and counselors.
+- **Chat Options**: Secure chat options for real-time communication with mental health experts.
+- **Chatbot**: A chatbot to handle common patient queries such as appointment scheduling, symptom checking, and FAQs. It can access patient history for personalized responses and escalate complex queries to human support or doctors.
+- **Voice Input**: Allow voice input for symptom descriptions and convert doctor-patient conversations into text for medical records. Support multilingual voice recognition.
+- **AI-Powered Features**: Summarize long doctor-patient consultations into structured notes, auto-complete patient records based on past data, and suggest medical terms and diagnoses using AI.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Installation
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/your-username/human-health.git
+    cd human-health
+    ```
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+2. Install the dependencies:
+    ```sh
+    npm install
+    ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+3. Start the development server:
+    ```sh
+    npm run dev
+    ```
+
+## Project Structure
